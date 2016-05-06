@@ -28,7 +28,7 @@
     </gazebo>
 
    
-    <gazebo reference="${name}_imu_measure">
+     <gazebo reference="${name}_imu_measure">
       <material>Gazebo/Blue</material>
      <sensor name='imu_sensor' type='imu'>
         <always_on>1</always_on>
@@ -41,14 +41,15 @@
     <robotNamespace>${name}</robotNamespace>
     <bodyName>${name}_imu_measure</bodyName> 
     <updateRateHZ>1000.0</updateRateHZ>
-    <!-- <gaussianNoise>0.0</gaussianNoise> -->
+
     <gaussianNoise>0.003</gaussianNoise>
     <xyzOffset>0.0 0.0 0.0</xyzOffset>
     <rpyOffset>0.0 0.0 0.0</rpyOffset>
         </plugin>
       <pose>0 0 0 0 0 0</pose>
       </sensor>
-    </gazebo>  
+    </gazebo>
+
 		
     <!-- <origin rpy="1.57 -1.57 -1.57" xyz="-0.0378 0 0.01665"/> -->
 
@@ -66,7 +67,7 @@
 
 
     <!-- The ft_sensor plugin  -->
-    <gazebo>
+     <gazebo>
         <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
 
         <updateRate>1000.0</updateRate>
@@ -75,10 +76,10 @@
         <noise>
           <type>gaussian</type>
           <mean>0.0</mean>
-          <stddev>0.003</stddev> <!-- change this to simulate noise  0.003--> 
+          <stddev>0.003</stddev> 
         </noise>
         </plugin>
-    </gazebo>
+    </gazebo> 
     
     <ros>  
     <plugin name="filters" filename="libforce_torque_sensor_filter.so">
